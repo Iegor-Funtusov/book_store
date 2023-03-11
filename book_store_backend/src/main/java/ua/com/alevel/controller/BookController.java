@@ -1,0 +1,24 @@
+package ua.com.alevel.controller;
+
+import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import ua.com.alevel.dto.BookDTO;
+import ua.com.alevel.facade.BookFacade;
+
+import java.util.Collection;
+
+@RestController
+@RequestMapping("/books")
+@AllArgsConstructor
+public class BookController {
+
+    private final BookFacade bookFacade;
+
+    @GetMapping
+    public ResponseEntity<Collection<BookDTO>> findAll() {
+        return ResponseEntity.ok(bookFacade.findAll());
+    }
+}

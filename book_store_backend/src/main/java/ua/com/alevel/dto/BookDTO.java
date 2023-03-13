@@ -18,7 +18,6 @@ public class BookDTO {
 
     private Long id;
     private String bookName;
-    private String description;
     private String imageUrl;
     private Integer pageSize;
     private Integer publishDate;
@@ -30,7 +29,6 @@ public class BookDTO {
     public BookDTO(Book book) {
         this.id = book.getId();
         this.bookName = book.getBookName();
-        this.description = book.getDescription();
         this.imageUrl = book.getImageUrl();
         this.pageSize = book.getPageSize();
         this.publishDate = book.getPublishDate();

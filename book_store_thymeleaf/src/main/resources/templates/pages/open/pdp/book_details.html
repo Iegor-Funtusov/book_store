@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Authors</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <div class="card">
+        <div class="card-header">
+            <h3 th:text="${book.bookName}"></h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <tr>
+                    <td>
+                        <img th:src="${book.getImageUrl()}" class="card-img-top" alt="...">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Authors</td>
+                    <td>
+                        <ul th:each="author : ${book.getAuthors()}">
+                            <li th:text="${author}"></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Page size</td>
+                    <td th:text="${book.pageSize}"></td>
+                </tr>
+                <tr>
+                    <td>Publish date</td>
+                    <td th:text="${book.publishDate}"></td>
+                </tr>
+                <tr>
+                    <td>Publisher</td>
+                    <td th:text="${book.publisher}"></td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td th:text="${book.description}"></td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td th:text="${book.price}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

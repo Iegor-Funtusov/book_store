@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Service;
 import ua.com.alevel.dto.AuthorDTO;
+import ua.com.alevel.dto.AuthorDetailsDTO;
 import ua.com.alevel.facade.AuthorFacade;
 import ua.com.alevel.persistence.entity.Author;
 import ua.com.alevel.service.AuthorService;
@@ -28,8 +29,8 @@ public class AuthorFacadeImpl implements AuthorFacade {
     }
 
     @Override
-    public AuthorDTO findById(Long id) {
-        return new AuthorDTO(authorService.findById(id));
+    public AuthorDetailsDTO findById(Long id) {
+        return new AuthorDetailsDTO(authorService.findById(id));
     }
 
     @Override

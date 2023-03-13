@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Authors</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <div class="card">
+        <div class="card-header">
+            All Authors
+        </div>
+        <div class="card-body">
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>
+                        First name
+                    </th>
+                    <th>
+                        Last name
+                    </th>
+                    <th>
+                        Books
+                    </th>
+                    <th>
+                        About
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="author : ${authors}">
+                    <td th:text="${author.getFirstName()}"></td>
+                    <td th:text="${author.getLastName()}"></td>
+                    <td>
+                        <a href="#" th:type="button" class="btn btn-light">0</a>
+                    </td>
+                    <td>
+                        <a th:href="@{'/authors/' + ${author.getId()}}" th:type="button" class="btn btn-light">About</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

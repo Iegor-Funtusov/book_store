@@ -31,3 +31,11 @@
 | POST        |  INSERT   |    201 |
 | PUT         |  UPDATE   |    200 |
 | DELETE      |  DELETE   |    200 |
+
+### E-commerce system (internet store)
+
+1. PLP (product listing page)
+2. PDP (product details page)
+3. Cart 
+4. Checkout (order process)
+5. My Account (my payments, my orders, my addresses)

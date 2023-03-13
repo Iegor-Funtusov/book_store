@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Service;
 import ua.com.alevel.dto.BookDTO;
+import ua.com.alevel.dto.BookDetailsDTO;
 import ua.com.alevel.facade.BookFacade;
 import ua.com.alevel.persistence.entity.Book;
 import ua.com.alevel.service.BookService;
@@ -24,6 +25,11 @@ public class BookFacadeImpl implements BookFacade {
             return books.stream().map(BookDTO::new).toList();
         }
         return Collections.emptyList();
+    }
+
+    @Override
+    public BookDetailsDTO findById(Long id) {
+        return new BookDetailsDTO(bookService.findById(id));
     }
 
     @Override

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ua.com.alevel.dto.AuthorDTO;
+import ua.com.alevel.dto.AuthorDetailsDTO;
 import ua.com.alevel.facade.AuthorFacade;
 
 import java.util.Collection;
@@ -29,7 +30,7 @@ public class AuthorController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<AuthorDTO> findById(@PathVariable Long id) {
+    public ResponseEntity<AuthorDetailsDTO> findById(@PathVariable Long id) {
         return ResponseEntity.ok(authorFacade.findById(id));
     }
 
